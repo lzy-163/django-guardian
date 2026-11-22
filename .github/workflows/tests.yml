@@ -1,4 +1,3 @@
----
 name: Tests
 
 on:
@@ -104,6 +103,7 @@ jobs:
         run: |
           pip install .;
           cd example_project;
+          pip install -r requirements.txt;
           DJANGO_VERSION="${{ matrix.django }}"
           EXAMPLE_PROJECTS_DJANGO_VERSION=$(grep -i "django[^-]" requirements.txt | cut -d "=" -f 2)
           if [ "${DJANGO_VERSION:0:3}" = "${EXAMPLE_PROJECTS_DJANGO_VERSION:0:3}" ]; then
