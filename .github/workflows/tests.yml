@@ -80,7 +80,7 @@ jobs:
       - name: Ensure no version conflicts exist
         run: pip check
       - name: Lint modern PY3 syntax
-        run: find . -name '*.py' | xargs pyupgrade --py3-only
+        run: find . -name '*.py' | xargs pyupgrade --py3-plus
 
       - name: Code tests (with PostgreSQL)
         run: |
